@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 10px;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .form-container select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .form-container button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Welcome to the Product Recommender!</h1>
+            <form action="/search" method="post">
+                <h2>Search for a Brand</h2>
+                <label for="user_id">Select User ID to LogIn:</label>
+                <select name="user_id" id="user_id">
+                    <option value="543446752">User 1</option>
+                    <option value="462339675">User 2</option>
+                    <option value="525659379">User 3</option>
+                    <option value="468390640">User 4</option>
+                    <option value="526462340">User 5</option>
+                    <option value="443619878">User 6</option>
+                    <option value="555330867">User 7</option>
+                </select>
+                <label for="brand">Brand:</label>
+                <select name="brand" id="brand">
+                    <option value="runail">Runail</option>
+                    <option value="lovely">Lovely</option>
+                    <option value="kapous">Kapous</option>
+                    <option value="lianailK">LianailK</option>
+                    <option value="irisk">Irisk</option>
+                    <option value="nagaraku">Nagaraku</option>
+                    <option value="masura">Masura</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="form-container">
+            <form action="/recommend" method="post">
+                <h2>Get Recommendations</h2>
+                <label for="user_id">LogIn:</label>
+                <select name="user_id" id="user_id">
+                    <option value="543446752">User 1</option>
+                    <option value="462339675">User 2</option>
+                    <option value="525659379">User 3</option>
+                    <option value="468390640">User 4</option>
+                    <option value="526462340">User 5</option>
+                    <option value="443619878">User 6</option>
+                    <option value="555330867">User 7</option>
+                </select>
+                <button type="submit">Get Recommendations</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+

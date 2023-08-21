@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: blue;
+        }
+        .go-back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .go-back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recommended Products based on searched brand {{ brand }}</h1>
+
+    <h2>Product Recommendations based on search:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Brand</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recommendation in search %}
+            <tr>
+                <td>{{ recommendation.product_id }}</td>
+                <td>{{ recommendation.brand }}</td>
+                <td>{{ recommendation.rating }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/" class="go-back-button">Go back</a>
+</body>
+</html>
